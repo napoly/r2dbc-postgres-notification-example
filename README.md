@@ -19,8 +19,7 @@ You also need JDK 1.8.
 
 ## Requirements
 
-You need a running PostgreSQL database. `src/main/resources/application.properties` is configured to `localhost:5432` user `postgres` without a password.
-Please adapt the parameters to your environment.
+You need a running PostgreSQL database. One can use 'docker-compose up' which should set up postgre with needed credentials.
 
 ## Running the Application
 
