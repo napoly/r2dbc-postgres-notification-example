@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+
+    postgres:
+      image: postgres
+      container_name: postgres
+      restart: always
+      environment:
+        POSTGRES_PASSWORD: example
+      ports:
+        - 5432:5432
+      labels:
+        NAME: "postgresql"
+
+    adminer:
+      image: wodby/adminer
+      container_name: adminer
+      restart: always
+      depends_on:
+        - postgres
+      environment:
+        ADMINER_DEFAULT_DB_DRIVER: pgsql
+        ADMINER_DEFAULT_DB_HOST: postgres
+        ADMINER_DEFAULT_DB_NAME: postgres
+      labels:
+        NAME: "adminer"
+      ports:
+        - 9000:9000
